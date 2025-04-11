@@ -1,0 +1,266 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #000000 0%, #2a1f0d 100%);  /* Black to warm gold gradient */
+  color: #e0e0e0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+/* Netflix-Style Logo Animation */
+.netflix-logo {
+  font-size: 4.5rem;
+  color: #f5c518;  /* Warm gold color */
+  text-shadow: 0 0 5px rgba(245, 197, 24, 0.3);
+  opacity: 0;
+  animation: netflixFade 3s ease-in-out forwards;
+  position: relative;
+}
+
+.netflix-logo::before,
+.netflix-logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #f5c518;
+  animation: netflixBeam 3s ease-in-out forwards;
+}
+
+.netflix-logo::before {
+  left: -15px;
+  transform: translateX(-100%);
+}
+
+.netflix-logo::after {
+  right: -15px;
+  transform: translateX(100%);
+}
+
+@keyframes netflixFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes netflixBeam {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+/* Intro Section */
+#introSection {
+  background: linear-gradient(135deg, #000000 0%, #2a1f0d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Main Section (Home Page with Upload) */
+#mainSection {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #000000 0%, #2a1f0d 100%);
+  position: relative;
+}
+
+/* SenseTheScene Background */
+.sense-the-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-size: 15rem;
+  font-weight: 700;
+  color: rgba(245, 197, 24, 0.1);  /* Semi-transparent warm gold */
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  z-index: 0;
+}
+
+/* Upload Container */
+.upload-container {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Subtle Text */
+.subtle-heading {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: rgba(224, 224, 224, 0.9);  /* Slightly transparent, high contrast */
+}
+
+.subtle-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(224, 224, 224, 0.7);  /* More transparent, still legible */
+}
+
+/* Custom Input Field (Styled like the screenshot) */
+.custom-input-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.custom-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  color: #e0e0e0;
+  border-radius: 50px;
+  padding: 12px 50px 12px 20px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: border-color 0.3s ease;
+}
+
+.custom-input::placeholder {
+  color: rgba(224, 224, 224, 0.5);
+}
+
+.custom-input:focus {
+  border-color: #f5c518;
+  box-shadow: 0 0 5px rgba(245, 197, 24, 0.3);
+  outline: none;
+}
+
+.arrow-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f5c518;  /* Yellow background */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;  /* Black arrow */
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #d4af37;
+}
+
+.arrow-btn:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Modern Button (Yellow Process Button) */
+.modern-btn {
+  background: #f5c518;  /* Yellow background */
+  border: none;
+  color: #000000;  /* Black text */
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modern-btn:hover {
+  background: #d4af37;
+  transform: translateY(-2px);
+}
+
+.modern-btn:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Form Check */
+.form-check-input {
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  width: 20px;
+  height: 20px;
+}
+
+.form-check-input:checked {
+  background-color: #f5c518;
+  border-color: #f5c518;
+}
+
+.form-check-input:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Modern Video */
+.modern-video {
+  border-radius: 10px;
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.modern-video:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.modern-video:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Video Section */
+#videoSection {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #000000 0%, #2a1f0d 100%);
+}
+
+/* Home Button */
+#homeButton {
+  background: transparent;
+  border: 1px solid rgba(245, 197, 24, 0.5);
+  color: #f5c518;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#homeButton:hover {
+  background: rgba(245, 197, 24, 0.2);
+  color: #ffffff;
+}
+
+#homeButton:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+}
