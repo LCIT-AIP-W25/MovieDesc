@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SenseTheScene - Premium AI Experience</title>
+  <!-- Favicon (optional, ensure favicon.ico exists or remove this line) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts (Inter for a modern, clean look) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Audio for Theater Ambiance -->
+  <audio id="theaterAmbiance" loop>
+    <source src="Reflections - MK2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Transition Sound -->
+  <audio id="transitionSound">
+    <source src="cinematic_intro.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Intro Section with Netflix-Style Logo Transition -->
+  <section id="introSection" class="vh-100 d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+      <h1 class="display-3 netflix-logo">SenseTheScene</h1>
+    </div>
+  </section>
+
+  <!-- Main Section (Home Page with Upload) -->
+  <section id="mainSection" class="vh-100 d-flex align-items-center justify-content-center d-none">
+    <div class="container text-center position-relative">
+      <!-- SenseTheScene Background Element -->
+      <div class="sense-the-scene" aria-hidden="true">SenseTheScene</div>
+      <div class="upload-container">
+        <h2 class="mb-3 subtle-heading">Experience Cinematic AI Narration</h2>
+        <p class="lead mb-4 subtle-text">Upload a video to enjoy AI-powered audio descriptions for the visually impaired.</p>
+        <form id="uploadForm">
+          <div class="mb-3 d-flex justify-content-center">
+            <!-- Custom Input Field -->
+            <div class="custom-input-wrapper">
+              <input type="text" class="custom-input" id="fileNameDisplay" placeholder="Upload an MP4 video..." readonly tabindex="0" aria-label="Selected video file name">
+              <input type="file" class="d-none" id="videoInput" accept="video/mp4" tabindex="-1" aria-hidden="true">
+              <button type="button" class="arrow-btn" id="triggerFileInput" tabindex="0" aria-label="Select a video file">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="addAudioDescCheckbox" checked tabindex="0">
+            <label class="form-check-label subtle-text" for="addAudioDescCheckbox">Add AI Audio Descriptions</label>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary modern-btn" id="processButton" tabindex="0" aria-label="Process the selected video">
+              <i class="fas fa-play me-2"></i>Process Video
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <div class="spinner-border text-primary d-none" role="status" id="loadingSpinner">
+              <span class="visually-hidden">Processing...</span>
+            </div>
+            <p id="progressText" class="mt-2 subtle-text" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="videoSection" class="d-none">
+    <div class="container position-relative">
+      <!-- Home Button -->
+      <button id="homeButton" class="btn btn-outline-light position-absolute top-0 start-0 mt-3 ms-3" tabindex="0" aria-label="Return to home page">
+        <i class="fas fa-home me-2"></i>Home
+      </button>
+      <h2 class="text-center mb-4 subtle-heading">Your Cinematic Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <video id="outputVideo" class="w-100 modern-video" controls tabindex="0" aria-label="Processed video with AI audio descriptions">
+            Your browser does not support the video tag.
+          </video>
+          <div class="text-center mt-3">
+            <a id="downloadLink" href="#" class="btn btn-primary modern-btn" download="processed_video.mp4" tabindex="0" aria-label="Download the processed video">
+              <i class="fas fa-download me-2"></i>Download Video
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 fixed-bottom">
+    <p>© 2025 SenseTheScene. Powered by AI.</p>
+  </footer>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
