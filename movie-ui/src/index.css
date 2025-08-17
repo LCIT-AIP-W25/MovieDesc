@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Quantum", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: radial-gradient(circle at 5% 5%, #003c32 0%, #0a0a0a 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+.dark-theme {
+  font-size: 16px;
+
+  --primary: #121212;
+  --secondary: #1e1e1e;
+  --accent: #00ffc3;
+  --accent-muted: #00bfa6;
+
+  --light-bg: rgba(0, 0, 0, 0.6);
+  --danger: #23a36b;
+  --text-white: #f5f5f5;
+  --gray: #b1b1b1;
+
+  --transition-all: all 0.3s ease-in-out;
+}
+
+code {
+  font-family: "Quantum", sans-serif;
+}
+
+/* index.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .fade-in-up {
+    @apply opacity-0 translate-y-6;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  transition: all 0.1s ease-in-out;
+  box-shadow: 4px 6px;
+  font-weight: 900;
+  border-radius: 10px;
+  background: var(--danger);
+  border: 3px solid black;
+
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 6px 8px;
+  }
+
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 2px 3px;
+  }
+}
+
+.button-reset {
+  all: unset; /* 🔥 Reset all inherited styles */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translate(0em, 0em) !important;
+    box-shadow: 0px 0px !important;
+  }
+
+  &:active {
+    transform: translate(0em, 0em) !important;
+    box-shadow: 0px 0px !important;
+  }
+}
+
+main[class*="pt-20"] {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.nav-active {
+  position: relative;
+  color: #00ffc3;
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00ffc3;
+}
+
+.nav-active {
+  position: relative;
+}
+
+.nav-active span:last-child {
+  opacity: 1 !important;
+}
+
+.underline-active span {
+  width: 100% !important;
+}
